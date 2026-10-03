@@ -1,0 +1,19 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 28,
+      "tag": "c:ingots/iron"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:tactical_carbine",
+    "components": {
+      "minecraft:custom_data": {
+        "HandguardVariant": 0,
+        "BaseVariant": 1
+      }
+    }
+  },
+  "recipe_id": "redundantguns:tactical_carbine_2"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 3,
+      "tag": "c:nuggets/iron"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:lightweight_muzzle_brake"
+  },
+  "recipe_id": "redundantguns:lightweight_muzzle_brake"
+}

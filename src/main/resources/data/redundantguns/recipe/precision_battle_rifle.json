@@ -1,0 +1,13 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 27
+    }
+  ],
+  "result": {
+    "id": "redundantguns:precision_battle_rifle"
+  },
+  "recipe_id": "redundantguns:precision_battle_rifle"
+}

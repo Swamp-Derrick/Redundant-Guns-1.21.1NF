@@ -12,16 +12,16 @@ import zaeonninezero.nzgmaddon.common.ExtraGunModifiers;
 import zaeonninezero.redundantguns.RedundantGuns;
 import zaeonninezero.redundantguns.common.RedundantGunModifiers;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.core.registries.Registries;
 
 public class initItems {
-	/*
+    /*
      * Create a Deferred Register to register the items to our mod.
      * This is called in the main mod file, where we will add it to the event bus.
      */
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RedundantGuns.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, RedundantGuns.MOD_ID);
 
     /*
      * Register a new instance of GunItem into the Deferred Register above.
@@ -30,24 +30,24 @@ public class initItems {
      *      https://github.com/MrCrayfish/MrCrayfishGunMod/tree/1.16.X/src/main/resources/data/cgm/guns
      * I would say, if you wanted to add something to this then make sure you know what you're doing :P
      */
-	 
-	//Guns
-    public static final RegistryObject<GunItem> COMBAT_PISTOL = ITEMS.register("combat_pistol", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-    public static final RegistryObject<GunItem> SIDEARM_PISTOL = ITEMS.register("sidearm_pistol", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-    public static final RegistryObject<GunItem> CARBINE_RIFLE = ITEMS.register("carbine_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-    public static final RegistryObject<GunItem> TACTICAL_CARBINE = ITEMS.register("tactical_carbine", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-    public static final RegistryObject<GunItem> RANGER_ASSAULT_RIFLE = ITEMS.register("ranger_assault_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> COMBAT_ASSAULT_RIFLE = ITEMS.register("combat_assault_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> PRECISION_BATTLE_RIFLE = ITEMS.register("precision_battle_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> MARES_LEG_RIFLE = ITEMS.register("mares_leg_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> TACTICAL_INFANTRY_RIFLE = ITEMS.register("tactical_infantry_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> COMBAT_MARKSMAN_RIFLE = ITEMS.register("combat_marksman_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> VINTAGE_BOLT_RIFLE = ITEMS.register("vintage_bolt_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	public static final RegistryObject<GunItem> TACTICAL_SNIPER_RIFLE = ITEMS.register("tactical_sniper_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
-	
-	//Barrels
-	public static final RegistryObject<Item> LIGHTWEIGHT_MUZZLE_BRAKE  = ITEMS.register("lightweight_muzzle_brake", () -> new BarrelItem(Barrel.create(4f,RedundantGunModifiers.LIGHT_MUZZLE_BRAKE_EFFECT), new Item.Properties().stacksTo(1).tab(nzgmAddon.GROUP)));
-	
-	//Stocks
-    public static final RegistryObject<Item> SPECIALIZED_CARBINE_STOCK  = ITEMS.register("specialized_carbine_stock", () -> new StockItem(Stock.create(RedundantGunModifiers.SPECIALIZED_CARBINE_STOCK), new Item.Properties().stacksTo(1).tab(RedundantGuns.GROUP)));
+
+    //Guns
+    public static final DeferredHolder<Item, GunItem> COMBAT_PISTOL = ITEMS.register("combat_pistol", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> SIDEARM_PISTOL = ITEMS.register("sidearm_pistol", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> CARBINE_RIFLE = ITEMS.register("carbine_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> TACTICAL_CARBINE = ITEMS.register("tactical_carbine", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> RANGER_ASSAULT_RIFLE = ITEMS.register("ranger_assault_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> COMBAT_ASSAULT_RIFLE = ITEMS.register("combat_assault_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> PRECISION_BATTLE_RIFLE = ITEMS.register("precision_battle_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> MARES_LEG_RIFLE = ITEMS.register("mares_leg_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> TACTICAL_INFANTRY_RIFLE = ITEMS.register("tactical_infantry_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> COMBAT_MARKSMAN_RIFLE = ITEMS.register("combat_marksman_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> VINTAGE_BOLT_RIFLE = ITEMS.register("vintage_bolt_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, GunItem> TACTICAL_SNIPER_RIFLE = ITEMS.register("tactical_sniper_rifle", () -> new GunItem(new Item.Properties().stacksTo(1)));
+
+    //Barrels
+    public static final DeferredHolder<Item, Item> LIGHTWEIGHT_MUZZLE_BRAKE  = ITEMS.register("lightweight_muzzle_brake", () -> new BarrelItem(Barrel.create(4f,RedundantGunModifiers.LIGHT_MUZZLE_BRAKE_EFFECT), new Item.Properties().stacksTo(1)));
+
+    //Stocks
+    public static final DeferredHolder<Item, Item> SPECIALIZED_CARBINE_STOCK  = ITEMS.register("specialized_carbine_stock", () -> new StockItem(Stock.create(RedundantGunModifiers.SPECIALIZED_CARBINE_STOCK), new Item.Properties().stacksTo(1)));
 }

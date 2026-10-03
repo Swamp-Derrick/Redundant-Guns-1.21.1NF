@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"loader": "framework:open_model",
 	"textures": {
-		"1": "redundantguns:items/precision_battle_rifle",
-		"particle": "redundantguns:items/precision_battle_rifle"
+		"1": "redundantguns:item/precision_battle_rifle",
+		"particle": "redundantguns:item/precision_battle_rifle"
 	},
 	"components": [
 		{

@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"loader": "framework:open_model",
 	"textures": {
-		"1": "cgm:items/tactical_stock",
-		"2": "nzgmaddon:items/dyeable_tactical_stock",
-		"particle": "cgm:items/tactical_stock"
+		"1": "cgm:item/tactical_stock",
+		"2": "nzgmaddon:item/dyeable_tactical_stock",
+		"particle": "cgm:item/tactical_stock"
 	},
 	"components": [
 		{

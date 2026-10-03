@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "nzgmaddon:items/medium_bullet",
-		"2": "nzgmaddon:items/sniper_rifle",
-		"particle": "nzgmaddon:items/medium_bullet"
+		"1": "nzgmaddon:item/medium_bullet",
+		"2": "nzgmaddon:item/sniper_rifle",
+		"particle": "nzgmaddon:item/medium_bullet"
 	},
 	"elements": [
 		{

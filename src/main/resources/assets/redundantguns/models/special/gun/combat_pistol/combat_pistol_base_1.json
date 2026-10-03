@@ -3,8 +3,8 @@
 	"loader": "framework:open_model",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "redundantguns:items/combat_pistol",
-		"particle": "cgm:items/pistol_magazines"
+		"0": "redundantguns:item/combat_pistol",
+		"particle": "redundantguns:item/combat_pistol"
 	},
 	"components": [
 		{

@@ -1,0 +1,13 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 29
+    }
+  ],
+  "result": {
+    "id": "redundantguns:combat_marksman_rifle"
+  },
+  "recipe_id": "redundantguns:combat_marksman_rifle"
+}

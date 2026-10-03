@@ -1,0 +1,20 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 23
+    },
+    {
+      "tag": "minecraft:planks",
+      "count": 5
+    }
+  ],
+  "result": {
+    "id": "redundantguns:ranger_assault_rifle",
+    "components": {
+      "minecraft:custom_model_data": 1
+    }
+  },
+  "recipe_id": "redundantguns:ranger_assault_rifle_1"
+}

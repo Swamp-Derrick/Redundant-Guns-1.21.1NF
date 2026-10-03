@@ -11,7 +11,7 @@ public class RedundantGunModifiers
 
     public static final IGunModifier LIGHT_MUZZLE_BRAKE_EFFECT = new IGunModifier()
     {
-    	@Override
+        @Override
         public float recoilModifier()
         {
             return 0.94F;
@@ -29,7 +29,7 @@ public class RedundantGunModifiers
             return 1.10F;
         }
     };
-	public static final IGunModifier SPECIALIZED_CARBINE_STOCK = new IGunModifier()
+    public static final IGunModifier SPECIALIZED_CARBINE_STOCK = new IGunModifier()
     {
         @Override
         public float recoilModifier()

@@ -1,0 +1,26 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 15
+    },
+    {
+      "tag": "c:nuggets/iron",
+      "count": 3
+    },
+    {
+      "tag": "minecraft:planks",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "redundantguns:mares_leg_rifle",
+    "components": {
+      "minecraft:custom_data": {
+        "BaseVariant": 1
+      }
+    }
+  },
+  "recipe_id": "redundantguns:mares_leg_rifle_1"
+}

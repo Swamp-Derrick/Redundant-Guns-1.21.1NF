@@ -3,10 +3,10 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "cgm:items/assault_rifle",
-		"2": "redundantguns:items/carbine_rifle",
-		"6": "redundantguns:items/tactical_carbine",
-		"particle": "cgm:items/tactical_stock"
+		"1": "cgm:item/assault_rifle",
+		"2": "redundantguns:item/carbine_rifle",
+		"6": "redundantguns:item/tactical_carbine",
+		"particle": "cgm:item/tactical_stock"
 	},
 	"elements": [
 		{

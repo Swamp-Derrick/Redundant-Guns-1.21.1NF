@@ -1,0 +1,17 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 10,
+      "tag": "c:nuggets/iron"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:gray_wool"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:specialized_carbine_stock"
+  },
+  "recipe_id": "redundantguns:specialized_carbine_stock"
+}

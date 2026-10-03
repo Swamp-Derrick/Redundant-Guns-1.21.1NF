@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "cgm:items/pistol",
-		"3": "cgm:items/machine_pistol",
-		"particle": "cgm:items/machine_pistol"
+		"1": "cgm:item/pistol",
+		"3": "cgm:item/machine_pistol",
+		"particle": "cgm:item/machine_pistol"
 	},
 	"elements": [
 		{

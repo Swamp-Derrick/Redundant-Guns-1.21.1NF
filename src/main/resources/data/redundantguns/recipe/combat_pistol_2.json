@@ -1,0 +1,19 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 15,
+      "tag": "c:ingots/iron"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:combat_pistol",
+    "components": {
+      "minecraft:custom_data": {
+        "BaseVariant": 2,
+        "SlideVariant": 1
+      }
+    }
+  },
+  "recipe_id": "redundantguns:combat_pistol_2"
+}

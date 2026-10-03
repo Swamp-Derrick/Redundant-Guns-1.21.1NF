@@ -1,0 +1,17 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 23
+    },
+    {
+      "tag": "c:nuggets/iron",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "redundantguns:tactical_sniper_rifle"
+  },
+  "recipe_id": "redundantguns:tactical_sniper_rifle"
+}

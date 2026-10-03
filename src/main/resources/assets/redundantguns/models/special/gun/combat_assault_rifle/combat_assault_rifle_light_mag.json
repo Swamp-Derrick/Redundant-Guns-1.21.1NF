@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "cgm:items/assault_rifle",
-		"2": "cgm:items/light_magazine",
-		"particle": "cgm:items/light_magazine"
+		"1": "cgm:item/assault_rifle",
+		"2": "redundantguns:item/magazines_common",
+		"particle": "redundantguns:item/magazines_common"
 	},
 	"elements": [
 		{

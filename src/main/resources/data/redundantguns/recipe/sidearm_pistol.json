@@ -1,0 +1,13 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 14,
+      "tag": "c:ingots/iron"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:sidearm_pistol"
+  },
+  "recipe_id": "redundantguns:sidearm_pistol"
+}

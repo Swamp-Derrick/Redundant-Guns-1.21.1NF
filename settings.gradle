@@ -1,6 +1,2 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        maven { url = 'https://maven.minecraftforge.net/' }
-    }
-}
+pluginManagement { repositories { gradlePluginPortal() } }
+rootProject.name = 'Redundant-Guns-1.21.1NF'

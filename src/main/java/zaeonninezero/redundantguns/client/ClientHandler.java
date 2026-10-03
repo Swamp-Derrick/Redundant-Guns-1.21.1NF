@@ -5,18 +5,24 @@ import com.mrcrayfish.guns.client.render.gun.model.SimpleModel;
 import zaeonninezero.redundantguns.client.render.gun.model.*;
 import zaeonninezero.redundantguns.RedundantGuns;
 import zaeonninezero.redundantguns.init.initItems;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
 
-@Mod.EventBusSubscriber(modid = RedundantGuns.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = RedundantGuns.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ClientHandler
 {
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onClientSetup(net.neoforged.fml.event.lifecycle.FMLClientSetupEvent event)
+    {
+        event.enqueueWork(ClientHandler::setup);
+    }
+
     public static void setup()
     {
         registerModelOverrides();
     }
-	
-	private static void registerModelOverrides()
+
+    private static void registerModelOverrides()
     {
         ModelOverrides.register(initItems.CARBINE_RIFLE.get(), new CarbineRifleModel());
         ModelOverrides.register(initItems.COMBAT_ASSAULT_RIFLE.get(), new CombatAssaultRifleModel());

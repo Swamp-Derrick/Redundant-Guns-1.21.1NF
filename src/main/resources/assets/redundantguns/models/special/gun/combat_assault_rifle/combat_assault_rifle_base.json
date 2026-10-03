@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "nzgmaddon:items/battle_rifle",
-		"particle": "nzgmaddon:items/battle_rifle"
+		"1": "nzgmaddon:item/battle_rifle",
+		"particle": "nzgmaddon:item/battle_rifle"
 	},
 	"elements": [
 		{

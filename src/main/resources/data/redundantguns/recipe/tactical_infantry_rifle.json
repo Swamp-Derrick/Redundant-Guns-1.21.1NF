@@ -1,0 +1,17 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 20
+    },
+    {
+      "tag": "minecraft:planks",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "redundantguns:tactical_infantry_rifle"
+  },
+  "recipe_id": "redundantguns:tactical_infantry_rifle"
+}

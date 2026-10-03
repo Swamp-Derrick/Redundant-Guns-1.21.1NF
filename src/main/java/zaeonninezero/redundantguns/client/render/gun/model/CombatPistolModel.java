@@ -1,26 +1,22 @@
 package zaeonninezero.redundantguns.client.render.gun.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import com.mrcrayfish.guns.common.Gun;
-import com.mrcrayfish.guns.GunMod;
 import com.mrcrayfish.guns.client.GunModel;
 
-import zaeonninezero.nzgmaddon.client.SpecialModels;
-import zaeonninezero.nzgmaddon.util.CGMExpandedHelper;
 import zaeonninezero.redundantguns.client.RedundantSpecialModels;
 import com.mrcrayfish.guns.client.render.gun.IOverrideModel;
-import com.mrcrayfish.guns.client.util.GunAnimationHelper;
 import com.mrcrayfish.guns.client.util.RenderUtil;
 import com.mrcrayfish.guns.item.GunItem;
 import com.mrcrayfish.guns.item.attachment.IAttachment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.nbt.CompoundTag;
+import com.mrcrayfish.guns.util.ItemStackUtil;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -34,178 +30,126 @@ import javax.annotation.Nullable;
  */
 public class CombatPistolModel implements IOverrideModel
 {
-	private boolean hasExpanded = CGMExpandedHelper.isExpandedInstalled();
-	private boolean disableAnimations = false;
-	
+
     @Override
-	// This class renders a multi-part model that supports animations and removeable parts.
-	// We'll render the non-moving/static parts first, then render the animated parts.
-	
-	// We start by declaring our render function that will handle rendering the core baked model (which is a non-moving part).
-    public void render(float partialTicks, ItemTransforms.TransformType transformType, ItemStack stack, ItemStack parent, @Nullable LivingEntity entity, PoseStack poseStack, MultiBufferSource buffer, int light, int overlay)
+    // This class renders a multi-part model that supports animations and removeable parts.
+    // We'll render the non-moving/static parts first, then render the animated parts.
+
+    // We start by declaring our render function that will handle rendering the core baked model (which is a non-moving part).
+    public void render(float partialTicks, ItemDisplayContext transformType, ItemStack stack, ItemStack parent, @Nullable LivingEntity entity, PoseStack poseStack, MultiBufferSource buffer, int light, int overlay)
     {
-		// Render the item's BakedModel, which will serve as the core of our custom model.
+        // Render the item's BakedModel, which will serve as the core of our custom model.
         BakedModel bakedModel = RedundantSpecialModels.COMBAT_PISTOL_BASE.getModel();
         if (getVariant(stack, "BaseVariant") == 1)
         bakedModel = RedundantSpecialModels.COMBAT_PISTOL_BASE_1.getModel();
         else
         if (getVariant(stack, "BaseVariant") == 2)
         bakedModel = RedundantSpecialModels.COMBAT_PISTOL_BASE_2.getModel();
-        Minecraft.getInstance().getItemRenderer().render(stack, ItemTransforms.TransformType.NONE, false, poseStack, buffer, light, overlay, GunModel.wrap(bakedModel));
+        Minecraft.getInstance().getItemRenderer().render(stack, ItemDisplayContext.NONE, false, poseStack, buffer, light, overlay, GunModel.wrap(bakedModel));
 
-		// Render the top rail element that appears when a scope is attached.
-		// We have to grab the gun's scope attachment slot and check whether it is empty or not.
-		// If the isEmpty function returns false, then we render the attachment rail.
-		ItemStack attachmentStack = Gun.getAttachment(IAttachment.Type.SCOPE, stack);
+        // Render the top rail element that appears when a scope is attached.
+        // We have to grab the gun's scope attachment slot and check whether it is empty or not.
+        // If the isEmpty function returns false, then we render the attachment rail.
+        ItemStack attachmentStack = Gun.getAttachment(IAttachment.Type.SCOPE, stack);
         if(!attachmentStack.isEmpty())
-		{
+        {
             RenderUtil.renderModel(RedundantSpecialModels.COMBAT_PISTOL_SIGHTMOUNT.getModel(), transformType, null, stack, parent, poseStack, buffer, light, overlay);
-		}
-        
-		// Extended frame element -- this renders when the alternate slide variant is used.
-		// We have to grab the gun's scope attachment slot and check whether it is empty or not.
-		// If the isEmpty function returns false, then we render the attachment rail.
+        }
+
+        // Extended frame element -- this renders when the alternate slide variant is used.
+        // We have to grab the gun's scope attachment slot and check whether it is empty or not.
+        // If the isEmpty function returns false, then we render the attachment rail.
         if (getVariant(stack, "SlideVariant") == 1)
         {
             RenderUtil.renderModel(RedundantSpecialModels.COMBAT_PISTOL_FRAME_EXTEND.getModel(), transformType, null, stack, parent, poseStack, buffer, light, overlay);
-		}
+        }
 
-        // Special animated segment for compat with the CGM Expanded fork.
+        // Mechanical firing animation for ordinary CGM.
         // First, some variables for animation building
         boolean isPlayer = entity != null && entity.equals(Minecraft.getInstance().player);
-        boolean isFirstPerson = (transformType.firstPerson());
-        boolean correctContext = (transformType.firstPerson() || transformType == ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND || transformType == ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND);
-        boolean isDisplayed = (transformType == ItemTransforms.TransformType.FIXED);
-        boolean isGUI = (transformType == ItemTransforms.TransformType.GUI);
-        
+        boolean correctContext = (transformType.firstPerson() || transformType == ItemDisplayContext.THIRD_PERSON_RIGHT_HAND || transformType == ItemDisplayContext.THIRD_PERSON_LEFT_HAND);
+        boolean isDisplayed = (transformType == ItemDisplayContext.FIXED);
+        boolean isGUI = (transformType == ItemDisplayContext.GUI);
+
         Vec3 slideTranslations = Vec3.ZERO;
-        
+
         Vec3 hammerRotations = Vec3.ZERO;
         float hammerBaseRotation = 80;
         Vec3 hammerRotOffset = new Vec3(0, 2.71-8, 7.45);
-        
-        Vec3 magTranslations = Vec3.ZERO;
-        Vec3 magRotations = Vec3.ZERO;
-        Vec3 magRotOffset = Vec3.ZERO;
-        
-        if(isPlayer && correctContext && hasExpanded && !disableAnimations)
-        {
-        	try {
-    				Player player = (Player) entity;
-    				slideTranslations = GunAnimationHelper.getSmartAnimationTrans(stack, player, partialTicks, "slide");
-    				
-    				hammerRotations = GunAnimationHelper.getSmartAnimationRot(stack, player, partialTicks, "hammer");
-					
-        			magTranslations = GunAnimationHelper.getSmartAnimationTrans(stack, player, partialTicks, "magazine");
-        	        magRotations = GunAnimationHelper.getSmartAnimationRot(stack, player, partialTicks, "magazine");
-        	        magRotOffset = GunAnimationHelper.getSmartAnimationRotOffset(stack, player, partialTicks, "magazine");
-        		}
-	    		catch(NoClassDefFoundError ignored) {
-	            	disableAnimations = true;
-	    		}
-        		catch(Exception e) {
-                	GunMod.LOGGER.error("Redundant Guns encountered an error trying to apply animations.");
-                	e.printStackTrace();
-                	disableAnimations = true;
-        		}
-        }
-        
+
         GunItem gunStack = (GunItem) stack.getItem();
         Gun gun = gunStack.getModifiedGun(stack);
-        
-		// Slide and hammer animation logic.
+
+        // Slide and hammer animation logic.
         // This is particularly complex logic since we have multiple moving parts.
         if(isPlayer && correctContext)
         {
             float cooldownDivider = 1.0F*Math.max((float) gun.getGeneral().getRate()/2.7F,1);
             float cooldownOffset1 = cooldownDivider - 1.0F;
             float intensity = 1.0F +1;
-            
-        	ItemCooldowns tracker = Minecraft.getInstance().player.getCooldowns();
-            float cooldown = tracker.getCooldownPercent(stack.getItem(), Minecraft.getInstance().getFrameTime());
+
+            ItemCooldowns tracker = Minecraft.getInstance().player.getCooldowns();
+            float cooldown = tracker.getCooldownPercent(stack.getItem(), partialTicks);
             cooldown *= cooldownDivider;
             float cooldown_a = cooldown-cooldownOffset1;
 
             float cooldown_b = Math.min(Math.max(cooldown_a*intensity,0),1);
             float cooldown_c = Math.min(Math.max((-cooldown_a*intensity)+intensity,0),1);
             float cooldown_d = Math.min(cooldown_b,cooldown_c);
-            
+
             slideTranslations = slideTranslations.add(0, 0, cooldown_d * 1.3);
             hammerRotations = hammerRotations.add(((cooldown_c-1) * hammerBaseRotation), 0, 0);
         }
 
-		// Combat Pistol slide. This animated part kicks backward on firing, then moves back to its resting position.
+        // Combat Pistol slide. This animated part kicks backward on firing, then moves back to its resting position.
         poseStack.pushPose();
-		// Apply transformations to this part.
+        // Apply transformations to this part.
         if(isPlayer)
         poseStack.translate(0, 0, slideTranslations.z * 0.0625);
-		// Render the transformed model.
-     	BakedModel slideModel = RedundantSpecialModels.COMBAT_PISTOL_SLIDE.getModel();
+        // Render the transformed model.
+         BakedModel slideModel = RedundantSpecialModels.COMBAT_PISTOL_SLIDE.getModel();
         if (getVariant(stack, "SlideVariant") == 1)
-        	slideModel = RedundantSpecialModels.COMBAT_PISTOL_SLIDE_1.getModel();
+            slideModel = RedundantSpecialModels.COMBAT_PISTOL_SLIDE_1.getModel();
         RenderUtil.renderModel(slideModel, transformType, null, stack, parent, poseStack, buffer, light, overlay);
-		// Pop pose to compile everything in the render matrix.
+        // Pop pose to compile everything in the render matrix.
         poseStack.popPose();
-        
+
         // Hammer. This part rotates backwards along the x-axis, then locks in place during the animation.
-     	// Push pose so we can make do transformations without affecting the models above.
-     	poseStack.pushPose();
-     	// Now we apply our transformations.
-     	if(isPlayer && !isDisplayed && !isGUI)
-     	{
-     	    if (hasExpanded)
-     	    {
-     	    	GunAnimationHelper.rotateAroundOffset(poseStack, hammerRotations.add(hammerBaseRotation,0,0), hammerRotOffset);
-     	    }
-     	    else
-     	    {
-     	    	poseStack.translate(0, hammerRotOffset.y*0.0625, hammerRotOffset.z*0.0625);
-     	    	poseStack.mulPose(Vector3f.XN.rotationDegrees((float) -hammerRotations.x-hammerBaseRotation));
-     	    	poseStack.translate(0, -hammerRotOffset.y*0.0625, -hammerRotOffset.z*0.0625);
-     	    }
-     	}
-     	// Our transformations are done - now we can render the model.
-     	BakedModel hammerModel = RedundantSpecialModels.COMBAT_PISTOL_HAMMER.getModel();
+         // Push pose so we can make do transformations without affecting the models above.
+         poseStack.pushPose();
+         // Now we apply our transformations.
+         if(isPlayer && !isDisplayed && !isGUI)
+         {
+
+                 poseStack.translate(0, hammerRotOffset.y*0.0625, hammerRotOffset.z*0.0625);
+                 poseStack.mulPose(Axis.XN.rotationDegrees((float) -hammerRotations.x-hammerBaseRotation));
+                 poseStack.translate(0, -hammerRotOffset.y*0.0625, -hammerRotOffset.z*0.0625);
+
+         }
+         // Our transformations are done - now we can render the model.
+         BakedModel hammerModel = RedundantSpecialModels.COMBAT_PISTOL_HAMMER.getModel();
         if (getVariant(stack, "HammerVariant") == 1)
-     	hammerModel = RedundantSpecialModels.COMBAT_PISTOL_HAMMER_1.getModel();
-     	RenderUtil.renderModel(hammerModel, transformType, null, stack, parent, poseStack, buffer, light, overlay);
-     	// Pop pose to compile everything in the render matrix.
-     	poseStack.popPose();
-        
+         hammerModel = RedundantSpecialModels.COMBAT_PISTOL_HAMMER_1.getModel();
+         RenderUtil.renderModel(hammerModel, transformType, null, stack, parent, poseStack, buffer, light, overlay);
+         // Pop pose to compile everything in the render matrix.
+         poseStack.popPose();
+
         // Magazine for Combat Pistol
         poseStack.pushPose();
-		// Apply transformations to this part.
-        if(isPlayer && isFirstPerson && !disableAnimations)
-        {
-        	if(magTranslations!=Vec3.ZERO)
-        	poseStack.translate(magTranslations.x*0.0625, magTranslations.y*0.0625, magTranslations.z*0.0625);
-        	if(magRotations!=Vec3.ZERO)
-               GunAnimationHelper.rotateAroundOffset(poseStack, magRotations, magRotOffset);
-    	}
-		// Render the transformed model.
+        // Apply transformations to this part.
+
+        // Render the transformed model.
         RedundantSpecialModels magModel = RedundantSpecialModels.COMBAT_PISTOL_MAGAZINE;
-        try {
-        	ItemStack magStack = Gun.getAttachment(IAttachment.Type.byTagKey("Magazine"), stack);
-            if(!magStack.isEmpty())
-            {
-	            if (magStack.getItem().builtInRegistryHolder().key().location().getPath().equals("light_magazine"))
-		    		magModel = RedundantSpecialModels.COMBAT_PISTOL_LIGHT_MAG;
-	            else
-	            if (magStack.getItem().builtInRegistryHolder().key().location().getPath().equals("extended_magazine"))
-			    	magModel = RedundantSpecialModels.COMBAT_PISTOL_EXTENDED_MAG;
-            }
-		}
-		catch(Error ignored) {} catch(Exception ignored) {}
-        
+
         RenderUtil.renderModel(magModel.getModel(), transformType, null, stack, parent, poseStack, buffer, light, overlay);
-		// Pop pose to compile everything in the render matrix.
+        // Pop pose to compile everything in the render matrix.
         poseStack.popPose();
     }
-    
+
     //NBT fetch code for skin variants - ported from the "hasAmmo" function under common/Gun.java
     public static int getVariant(ItemStack gunStack, String tag_name)
     {
-        CompoundTag tag = gunStack.getOrCreateTag();
+        CompoundTag tag = ItemStackUtil.getOrCreateTag(gunStack);
         return tag.getInt(tag_name);
     }
 }

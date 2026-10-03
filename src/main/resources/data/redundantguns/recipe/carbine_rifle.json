@@ -1,0 +1,13 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 28,
+      "tag": "c:ingots/iron"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:carbine_rifle"
+  },
+  "recipe_id": "redundantguns:carbine_rifle"
+}

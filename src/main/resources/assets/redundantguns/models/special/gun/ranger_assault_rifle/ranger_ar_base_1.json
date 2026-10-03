@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "cgm:items/assault_rifle",
-		"2": "nzgmaddon:items/heavy_assault_rifle",
-		"particle": "cgm:items/assault_rifle"
+		"1": "cgm:item/assault_rifle",
+		"2": "nzgmaddon:item/heavy_assault_rifle",
+		"particle": "cgm:item/assault_rifle"
 	},
 	"elements": [
 		{

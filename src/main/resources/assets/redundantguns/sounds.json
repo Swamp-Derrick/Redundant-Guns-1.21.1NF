@@ -8,7 +8,7 @@
     ]
   },
   "item.combat_pistol.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/combat_pistol/enchanted_fire",
       "redundantguns:item/combat_pistol/enchanted_fire2",
@@ -16,7 +16,7 @@
     ]
   },
   "item.combat_pistol.silenced_fire": {
-    "subtitle":"subtitle.cgm.silenced",
+    "subtitle":"subtitle.cgm.fire.silenced",
     "sounds": [
       "redundantguns:item/combat_pistol/silenced_fire"
     ]
@@ -53,7 +53,7 @@
     ]
   },
   "item.sidearm_pistol.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/sidearm_pistol/enchanted_fire",
       "redundantguns:item/sidearm_pistol/enchanted_fire2",
@@ -61,7 +61,7 @@
     ]
   },
   "item.sidearm_pistol.silenced_fire": {
-    "subtitle":"subtitle.cgm.silenced",
+    "subtitle":"subtitle.cgm.fire.silenced",
     "sounds": [
       "redundantguns:item/combat_pistol/silenced_fire"
     ]
@@ -106,7 +106,7 @@
     ]
   },
   "item.carbine_rifle.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/carbine_rifle/enchanted_fire",
       "redundantguns:item/carbine_rifle/enchanted_fire2",
@@ -152,7 +152,7 @@
     ]
   },
   "item.ranger_assault_rifle.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/ranger_assault_rifle/enchanted_fire",
       "redundantguns:item/ranger_assault_rifle/enchanted_fire2",
@@ -170,7 +170,7 @@
     ]
   },
   "item.combat_assault_rifle.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/combat_assault_rifle/enchanted_fire",
       "redundantguns:item/combat_assault_rifle/enchanted_fire2",
@@ -206,7 +206,7 @@
     ]
   },
   "item.precision_battle_rifle.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/precision_battle_rifle/enchanted_fire",
       "redundantguns:item/precision_battle_rifle/enchanted_fire2",
@@ -223,13 +223,13 @@
     ]
   },
   "item.combat_marksman_rifle.silenced_fire": {
-    "subtitle":"subtitle.cgm.silenced",
+    "subtitle":"subtitle.cgm.fire.silenced",
     "sounds": [
       "redundantguns:item/combat_marksman_rifle/silenced_fire"
     ]
   },
   "item.combat_marksman_rifle.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/combat_marksman_rifle/enchanted_fire"
     ]
@@ -248,25 +248,25 @@
     ]
   },
   "item.vintage_bolt_rifle.enchanted_fire": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/vintage_bolt_action_rifle/enchanted_fire"
     ]
   },
   "item.vintage_bolt_rifle.enchanted_fire_bolt": {
-    "subtitle":"subtitle.cgm.enchanted_fire",
+    "subtitle":"subtitle.cgm.fire.enchanted",
     "sounds": [
       "redundantguns:item/vintage_bolt_action_rifle/enchanted_fire_bolt"
     ]
   },
   "item.vintage_bolt_rifle.silenced_fire": {
-    "subtitle":"subtitle.cgm.silenced",
+    "subtitle":"subtitle.cgm.fire.silenced",
     "sounds": [
       "nzgmaddon:item/bolt_action_rifle/silenced_fire"
     ]
   },
   "item.vintage_bolt_rifle.silenced_fire_bolt": {
-    "subtitle":"subtitle.cgm.silenced",
+    "subtitle":"subtitle.cgm.fire.silenced",
     "sounds": [
       "redundantguns:item/vintage_bolt_action_rifle/silenced_fire_bolt"
     ]

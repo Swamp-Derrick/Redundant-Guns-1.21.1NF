@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"loader": "framework:open_model",
 	"textures": {
-		"1": "cgm:items/assault_rifle",
-		"2": "redundantguns:items/carbine_rifle",
-		"particle": "redundantguns:items/carbine_rifle"
+		"1": "cgm:item/assault_rifle",
+		"2": "redundantguns:item/carbine_rifle",
+		"particle": "redundantguns:item/carbine_rifle"
 	},
 	"components": [
 		{
@@ -574,7 +574,7 @@
 				"east": {"uv": [11.5, 9, 7.5, 9.5], "texture": "#2"},
 				"west": {"uv": [7.5, 9.5, 11.5, 10], "texture": "#2"},
 				"up": {"uv": [7.5, 9, 11.5, 10], "rotation": 90, "texture": "#2"},
-				"down": {"uv": [0, 0, 0.35, 2.5], "texture": "#missing"}
+				"down": {"uv": [0, 0, 0.35, 2.5], "texture": "#2"}
 			}
 		},
 		{

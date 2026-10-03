@@ -1,0 +1,18 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "count": 28,
+      "tag": "c:ingots/iron"
+    }
+  ],
+  "result": {
+    "id": "redundantguns:combat_assault_rifle",
+    "components": {
+      "minecraft:custom_data": {
+        "SightVariant": 1
+      }
+    }
+  },
+  "recipe_id": "redundantguns:combat_assault_rifle_1"
+}

@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"2": "nzgmaddon:items/submachine_gun",
-		"4": "nzgmaddon:items/rails_common",
-		"particle": "nzgmaddon:items/automatic_sniper_rifle"
+		"2": "nzgmaddon:item/submachine_gun",
+		"4": "nzgmaddon:item/rails_common",
+		"particle": "nzgmaddon:item/automatic_sniper_rifle"
 	},
 	"elements": [
 		{

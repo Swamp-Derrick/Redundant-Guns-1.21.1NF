@@ -3,53 +3,53 @@ package zaeonninezero.redundantguns.init;
 import zaeonninezero.redundantguns.RedundantGuns;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.core.registries.Registries;
 
 
 public class initSounds {
-	/*
+    /*
      * This creates a Deferred Register where all of the sounds will be registered
      * This is called and added to the event bus in the main mod file.
      */
-	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, RedundantGuns.MOD_ID);
+    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, RedundantGuns.MOD_ID);
 
-	public static final RegistryObject<SoundEvent> ITEM_COMBAT_PISTOL_FIRE = register("item.combat_pistol.fire");
-	public static final RegistryObject<SoundEvent> ITEM_COMBAT_PISTOL_ENCHANTED_FIRE = register("item.combat_pistol.enchanted_fire");
-	public static final RegistryObject<SoundEvent> ITEM_COMBAT_PISTOL_SILENCED_FIRE = register("item.combat_pistol.silenced_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_COMBAT_PISTOL_FIRE = register("item.combat_pistol.fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_COMBAT_PISTOL_ENCHANTED_FIRE = register("item.combat_pistol.enchanted_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_COMBAT_PISTOL_SILENCED_FIRE = register("item.combat_pistol.silenced_fire");
 
-	public static final RegistryObject<SoundEvent> ITEM_SIDEARM_PISTOL_FIRE = register("item.sidearm_pistol.fire");
-	public static final RegistryObject<SoundEvent> ITEM_SIDEARM_PISTOL_ENCHANTED_FIRE = register("item.sidearm_pistol.enchanted_fire");
-	public static final RegistryObject<SoundEvent> ITEM_SIDEARM_PISTOL_SILENCED_FIRE = register("item.sidearm_pistol.silenced_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_SIDEARM_PISTOL_FIRE = register("item.sidearm_pistol.fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_SIDEARM_PISTOL_ENCHANTED_FIRE = register("item.sidearm_pistol.enchanted_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_SIDEARM_PISTOL_SILENCED_FIRE = register("item.sidearm_pistol.silenced_fire");
 
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_FIRE = register("item.carbine_rifle.fire");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_ENCHANTED_FIRE = register("item.carbine_rifle.enchanted_fire");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_SILENCED_FIRE = register("item.carbine_rifle.silenced_fire");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_MAG_OUT = register("item.carbine_rifle.mag_out");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_MAG_IN = register("item.carbine_rifle.mag_in");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_MAG_OUT_EMPTY = register("item.carbine_rifle.mag_out_empty");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_MAG_IN_EMPTY = register("item.carbine_rifle.mag_in_empty");
-	public static final RegistryObject<SoundEvent> ITEM_CARBINE_RIFLE_COCK = register("item.carbine_rifle.cock");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_FIRE = register("item.carbine_rifle.fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_ENCHANTED_FIRE = register("item.carbine_rifle.enchanted_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_SILENCED_FIRE = register("item.carbine_rifle.silenced_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_MAG_OUT = register("item.carbine_rifle.mag_out");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_MAG_IN = register("item.carbine_rifle.mag_in");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_MAG_OUT_EMPTY = register("item.carbine_rifle.mag_out_empty");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_MAG_IN_EMPTY = register("item.carbine_rifle.mag_in_empty");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_CARBINE_RIFLE_COCK = register("item.carbine_rifle.cock");
 
-	public static final RegistryObject<SoundEvent> ITEM_PRECISION_BATTLE_RIFLE_FIRE = register("item.precision_battle_rifle.fire");
-	public static final RegistryObject<SoundEvent> ITEM_PRECISION_BATTLE_ENCHANTED_FIRE = register("item.precision_battle_rifle.enchanted_fire");
-	public static final RegistryObject<SoundEvent> ITEM_PRECISION_BATTLE_SILENCED_FIRE = register("item.precision_battle_rifle.silenced_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_PRECISION_BATTLE_RIFLE_FIRE = register("item.precision_battle_rifle.fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_PRECISION_BATTLE_ENCHANTED_FIRE = register("item.precision_battle_rifle.enchanted_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_PRECISION_BATTLE_SILENCED_FIRE = register("item.precision_battle_rifle.silenced_fire");
 
-	public static final RegistryObject<SoundEvent> ITEM_COMBAT_MARKSMAN_RIFLE_FIRE = register("item.combat_marksman_rifle.fire");
-	public static final RegistryObject<SoundEvent> ITEM_COMBAT_MARKSMAN_ENCHANTED_FIRE = register("item.combat_marksman_rifle.enchanted_fire");
-	public static final RegistryObject<SoundEvent> ITEM_COMBAT_MARKSMAN_SILENCED_FIRE = register("item.combat_marksman_rifle.silenced_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_COMBAT_MARKSMAN_RIFLE_FIRE = register("item.combat_marksman_rifle.fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_COMBAT_MARKSMAN_ENCHANTED_FIRE = register("item.combat_marksman_rifle.enchanted_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_COMBAT_MARKSMAN_SILENCED_FIRE = register("item.combat_marksman_rifle.silenced_fire");
 
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_FIRE = register("item.vintage_bolt_rifle.fire");
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_ENCHANTED_FIRE = register("item.vintage_bolt_rifle.enchanted_fire");
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_SILENCED_FIRE = register("item.vintage_bolt_rifle.silenced_fire");
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_BOLT_BACK = register("item.vintage_bolt_rifle.bolt_back");
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_BOLT_FORWARD = register("item.vintage_bolt_rifle.bolt_forward");
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_CLIP_PLACE = register("item.vintage_bolt_rifle.clip_place");
-	public static final RegistryObject<SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_CLIP_IN = register("item.vintage_bolt_rifle.clip_in");
-	
-	//Method to help us register sounds
-	private static RegistryObject<SoundEvent> register(String key) {
-		return SOUNDS.register(key, () -> new SoundEvent(new ResourceLocation(RedundantGuns.MOD_ID, key)));
-	}
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_FIRE = register("item.vintage_bolt_rifle.fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_ENCHANTED_FIRE = register("item.vintage_bolt_rifle.enchanted_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_SILENCED_FIRE = register("item.vintage_bolt_rifle.silenced_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_BOLT_BACK = register("item.vintage_bolt_rifle.bolt_back");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_BOLT_FORWARD = register("item.vintage_bolt_rifle.bolt_forward");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_CLIP_PLACE = register("item.vintage_bolt_rifle.clip_place");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_VINTAGE_BOLT_RIFLE_CLIP_IN = register("item.vintage_bolt_rifle.clip_in");
+
+    //Method to help us register sounds
+    private static DeferredHolder<SoundEvent, SoundEvent> register(String key) {
+        return SOUNDS.register(key, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(RedundantGuns.MOD_ID, key)));
+    }
 }

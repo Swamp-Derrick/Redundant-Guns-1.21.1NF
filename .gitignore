@@ -20,3 +20,8 @@ deprecated_builds/*
 cgm-expanded-develop-1.19.2.jar
 nzgExpansion-develop-1.19.2.jar
 SourceTree.lnk
+
+# Local dependencies and test output
+libs/*.jar
+artifacts/
+.tools/

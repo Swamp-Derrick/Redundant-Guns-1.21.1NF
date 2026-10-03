@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"5": "nzgmaddon:items/iron_sights_common",
-		"particle": "cgm:items/tactical_stock"
+		"5": "nzgmaddon:item/iron_sights_common",
+		"particle": "cgm:item/tactical_stock"
 	},
 	"elements": [
 		{

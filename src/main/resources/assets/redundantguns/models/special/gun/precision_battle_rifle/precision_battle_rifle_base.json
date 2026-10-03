@@ -3,10 +3,10 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "redundantguns:items/precision_battle_rifle",
-		"2": "nzgmaddon:items/submachine_gun",
-		"3": "cgm:items/machine_pistol",
-		"particle": "nzgmaddon:items/automatic_sniper_rifle"
+		"1": "redundantguns:item/precision_battle_rifle",
+		"2": "nzgmaddon:item/submachine_gun",
+		"3": "cgm:item/machine_pistol",
+		"particle": "nzgmaddon:item/automatic_sniper_rifle"
 	},
 	"elements": [
 		{

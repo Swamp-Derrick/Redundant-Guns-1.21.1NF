@@ -1,0 +1,21 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 17
+    },
+    {
+      "tag": "c:nuggets/iron",
+      "count": 1
+    },
+    {
+      "tag": "minecraft:planks",
+      "count": 5
+    }
+  ],
+  "result": {
+    "id": "redundantguns:vintage_bolt_rifle"
+  },
+  "recipe_id": "redundantguns:vintage_bolt_rifle"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "nzgmaddon:workbench",
+  "materials": [
+    {
+      "tag": "c:ingots/iron",
+      "count": 27
+    }
+  ],
+  "result": {
+    "id": "redundantguns:precision_battle_rifle",
+    "components": {
+      "minecraft:custom_data": {
+        "BaseVariant": 1,
+        "HandguardVariant": 1
+      }
+    }
+  },
+  "recipe_id": "redundantguns:precision_battle_rifle_2"
+}

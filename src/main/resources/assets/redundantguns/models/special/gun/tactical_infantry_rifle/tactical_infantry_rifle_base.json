@@ -3,10 +3,10 @@
 	"loader": "framework:open_model",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "nzgmaddon:items/infantry_rifle",
-		"2": "nzgmaddon:items/iron_sights_common",
-		"3": "cgm:items/rifle",
-		"particle": "cgm:items/rifle"
+		"0": "nzgmaddon:item/infantry_rifle",
+		"2": "nzgmaddon:item/iron_sights_common",
+		"3": "cgm:item/rifle",
+		"particle": "cgm:item/rifle"
 	},
 	"components": [
 		{

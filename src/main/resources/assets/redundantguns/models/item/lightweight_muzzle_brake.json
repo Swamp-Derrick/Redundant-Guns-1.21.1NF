@@ -2,7 +2,7 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "nzgmaddon:items/muzzle"
+		"2": "nzgmaddon:item/muzzle"
 	},
 	"elements": [
 		{
